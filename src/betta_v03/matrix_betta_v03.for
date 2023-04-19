@@ -130,9 +130,8 @@ C Close all file which were used
         enddo
 
 C print Res
-        do i=1,iSize_j
-          print '(f6.0 $)', fRes(i)
-        enddo
-        print *, ''
+        open(1, file="res.txt")
+        write(1, *) (fRes(i), i=1,iSize_j)
+        close(1)
 
       end
